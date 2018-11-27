@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 
+import { TodosRoutingModule } from './todos-routing.module';
 import { TodosComponent } from './todos.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -8,6 +10,10 @@ import { TodosComponent } from './todos.component';
   ],
   exports: [
     TodosComponent
+  ],
+  imports: [
+    TodosRoutingModule,
+    SharedModule
   ]
 })
 export class TodosModule {}
