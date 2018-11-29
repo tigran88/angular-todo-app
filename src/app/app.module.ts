@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { TodosModule } from './todos/todos.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './core/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     SharedModule,
     HomeModule,
-    TodosModule
+    TodosModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

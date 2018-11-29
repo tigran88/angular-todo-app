@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes  } from '@angular/router';
 
-const router: Routes  = [
-  { path: '**', redirectTo: '/home' }
-];
+const router: Routes  = [];
 
 @NgModule({
   exports: [
