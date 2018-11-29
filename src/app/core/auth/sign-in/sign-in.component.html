@@ -1,3 +1,20 @@
-<p>
-  sign-in works!
-</p>
+<div class="sign-in">
+  <form class="sign-in__form">
+    <mat-form-field>
+      <input matInput placeholder="Email"
+             formControlName="email"
+             type="text"
+             class="sign-in__email"
+             autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password"
+             formControlName="password"
+             type="password"
+             class="sign-in__password">
+    </mat-form-field>
+    <button mat-raised-button
+            type="submit"
+            class="sign-in__button">Sign In</button>
+  </form>
+</div>

@@ -1,3 +1,26 @@
-<p>
-  sign-up works!
-</p>
+<div class="sign-up">
+  <form class="sign-up__form">
+    <mat-form-field>
+      <input matInput placeholder="Email"
+             formControlName="email"
+             type="text"
+             class="sign-up__input"
+             autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password"
+             formControlName="password"
+             type="password"
+             class="sign-up__input">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Confirm password"
+             formControlName="confirmPassword"
+             type="password"
+             class="sign-up__input">
+    </mat-form-field>
+    <button mat-raised-button
+            type="submit"
+            class="sign-up__button">Sign Up</button>
+  </form>
+</div>
