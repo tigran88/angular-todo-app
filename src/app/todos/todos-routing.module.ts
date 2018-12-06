@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TodosComponent } from './todos.component';
+import { TodosComponent } from './containers/todos/todos.component';
 import { AuthGuard } from '../core/auth/auth.guard';
 
 const routes: Routes = [
