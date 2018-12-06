@@ -6,6 +6,8 @@ import {
   FormBuilder
 } from '@angular/forms';
 
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -21,15 +23,20 @@ export class SignUpComponent implements OnInit {
     }
   );
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private authServise: AuthService) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onSubmit() {
-    console.log(this.registerForm.valid);
-    console.log(this.registerForm.value);
+    const authData = {
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password
+    };
+
+    if (this.registerForm.valid) {
+      this.authServise.register(authData);
+    }
   }
 
   matchPassword(AC: AbstractControl) {

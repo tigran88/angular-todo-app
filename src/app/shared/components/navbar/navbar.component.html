@@ -9,20 +9,25 @@
              class="nav__item__link"
              [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
-        <li class="nav__item">
+        <li class="nav__item" *ngIf="authService.authState">
           <a routerLink="/todos"
              routerLinkActive="nav--link-active"
              class="nav__item__link">Todos</a>
         </li>
-        <li class="nav__item">
+        <li class="nav__item" *ngIf="!authService.authState">
           <a routerLink="/sign-in"
              routerLinkActive="nav--link-active"
              class="nav__item__link">Sign In</a>
         </li>
-        <li class="nav__item">
+        <li class="nav__item" *ngIf="!authService.authState">
           <a routerLink="/sign-up"
              routerLinkActive="nav--link-active"
              class="nav__item__link">Sign Up</a>
+        </li>
+        <li class="nav__item" *ngIf="authService.authState">
+          <a href="#"
+             (click)="onLogout()"
+             class="nav__item__link">Logout</a>
         </li>
       </ul>
     </nav>
