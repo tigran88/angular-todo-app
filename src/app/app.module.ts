@@ -24,7 +24,7 @@ import { environment } from '../environments/environment';
     HomeModule,
     TodosModule,
     AuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [
     AuthService
