@@ -23,4 +23,8 @@ export class TodosComponent implements OnInit {
     this.todosService.addTodo(title);
   }
 
+  deleteTodo(id) {
+    this.todosService.deleteTodo(id);
+  }
+
 }

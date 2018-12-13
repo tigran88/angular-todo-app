@@ -4,5 +4,5 @@
     <input class="todo-item__edit" style="display: none" type="text">
     <div class="todo-item__name">{{ todo.title }}</div>
   </div>
-  <button class="todo-item__delete">&#10006;</button>
+  <button class="todo-item__delete" (click)="onDelete(todo.id)">&#10006;</button>
 </div>

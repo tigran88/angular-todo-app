@@ -35,4 +35,11 @@ export class TodoService {
     this.db.collection('todos').add(todo);
   }
 
+  deleteTodo(id) {
+    this.db.collection('todos').doc(id)
+      .delete()
+      .then(() => console.log('Todo successfully deleted!'))
+      .catch(error => console.log(error));
+  }
+
 }
