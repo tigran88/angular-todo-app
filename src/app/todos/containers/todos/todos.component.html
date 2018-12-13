@@ -1,10 +1,11 @@
 <div class="todos">
   <app-new-todo (addtodo)="addNewTodo($event)"></app-new-todo>
   <div *ngFor="let todo of todos">
-    {{todo.name}}
+    {{ todo.name }}
     <app-todo-item [todo]="todo"
                    (delete)="deleteTodo($event)"
-                   (toggleTodo)="toggleTodoCheckbox($event)"></app-todo-item>
+                   (toggleTodo)="toggleTodoCheckbox($event)"
+                   (edit)="editTodo($event)"></app-todo-item>
   </div>
   <app-filters></app-filters>
 </div>

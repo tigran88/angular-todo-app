@@ -4,8 +4,14 @@
          [checked]="todo.completed"
          (change)="onToggleTodoCheckbox(todo.id, todo.completed)">
   <div class="todo-item__text">
-    <input class="todo-item__edit" style="display: none" type="text">
-    <div class="todo-item__name">{{ todo.title }}</div>
+    <input class="todo-item__edit"
+           (keyup.enter)="editTodo($event, todo.id)"
+           style="display: none"
+           type="text"
+           [value]="todo.title">
+    <div class="todo-item__name"
+         (dblclick)="switchEditMode(todo.id)">{{ todo.title }}</div>
   </div>
-  <button class="todo-item__delete" (click)="onDelete(todo.id)">&#10006;</button>
+  <button class="todo-item__delete"
+          (click)="onDelete(todo.id)">&#10006;</button>
 </div>
