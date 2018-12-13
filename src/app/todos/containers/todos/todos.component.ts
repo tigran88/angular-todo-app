@@ -23,6 +23,10 @@ export class TodosComponent implements OnInit {
     this.todosService.addTodo(title);
   }
 
+  toggleTodoCheckbox(todo) {
+    this.todosService.toggleTodoCompleted(todo.id, todo.completed);
+  }
+
   deleteTodo(id) {
     this.todosService.deleteTodo(id);
   }

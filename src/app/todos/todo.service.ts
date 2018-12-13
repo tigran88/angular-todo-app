@@ -35,6 +35,13 @@ export class TodoService {
     this.db.collection('todos').add(todo);
   }
 
+  toggleTodoCompleted(id, completed) {
+    this.db.collection('todos').doc(id)
+      .update({completed: !completed})
+      .then(() => console.log('Todo successfully updated!'))
+      .catch(error => console.log(error));
+  }
+
   deleteTodo(id) {
     this.db.collection('todos').doc(id)
       .delete()

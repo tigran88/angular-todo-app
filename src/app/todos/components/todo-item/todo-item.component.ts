@@ -14,10 +14,15 @@ import {
 export class TodoItemComponent implements OnInit {
   @Input() todo;
   @Output() delete = new EventEmitter<string>();
+  @Output() toggleTodo = new EventEmitter<object>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onToggleTodoCheckbox(id, completed) {
+    this.toggleTodo.emit({ id, completed });
   }
 
   onDelete(id) {
