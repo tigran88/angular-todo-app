@@ -7,5 +7,5 @@
                    (toggleTodo)="toggleTodoCheckbox($event)"
                    (edit)="editTodo($event)"></app-todo-item>
   </div>
-  <app-filters></app-filters>
+  <app-filters (filter)="filterTodos($event)"></app-filters>
 </div>

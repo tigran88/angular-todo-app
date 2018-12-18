@@ -56,4 +56,33 @@ export class TodoService {
       .catch(error => console.log(error));
   }
 
+  filterTodos(type) {
+    let todosCollection;
+    switch (type) {
+      case 'completed':
+        todosCollection = this.db.collection('todos', ref => ref.where('completed', '==', true));
+      break;
+      case 'active':
+        todosCollection = this.db.collection('todos', ref => ref.where('completed', '==', false));
+      break;
+      default:
+        todosCollection = this.db.collection('todos');
+    }
+
+    todosCollection
+      .snapshotChanges()
+      .pipe(map(res => {
+        return res.map(doc => {
+          return {
+            id: doc.payload.doc.id,
+            ...doc.payload.doc.data()
+          };
+        });
+      }))
+      .subscribe(todos => {
+        this.todos = todos;
+        this.todosChanged.next([...todos]);
+      });
+  }
+
 }

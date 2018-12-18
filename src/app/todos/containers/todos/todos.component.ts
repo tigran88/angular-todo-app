@@ -35,4 +35,8 @@ export class TodosComponent implements OnInit {
     this.todosService.deleteTodo(id);
   }
 
+  filterTodos(type) {
+    this.todosService.filterTodos(type);
+  }
+
 }
