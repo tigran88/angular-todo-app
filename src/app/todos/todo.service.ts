@@ -91,4 +91,15 @@ export class TodoService {
       });
   }
 
+  clearCompleted() {
+    this.db.collection('todos', ref => ref.where('completed', '==', true))
+      .get().subscribe((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          this.db.collection('todos').doc(doc.id).delete().then(res => {
+            console.log('Todo successfully deleted!');
+          }).catch(error => console.log(error));
+        });
+    });
+  }
+
 }

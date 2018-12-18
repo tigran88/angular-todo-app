@@ -28,4 +28,8 @@ export class FiltersComponent implements OnInit {
     this.filter.emit(type);
   }
 
+  clearCompletedTodos() {
+    this.clearCompleted.emit();
+  }
+
 }
