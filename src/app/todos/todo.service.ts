@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class TodoService {
   todos = [];
   todosChanged = new Subject();
+  leftItem = new Subject();
 
   constructor(private db: AngularFirestore) { }
 
@@ -25,6 +26,11 @@ export class TodoService {
         this.todos = todos;
         this.todosChanged.next([...this.todos]);
     }));
+    this.db.collection('todos', ref => ref.where('completed', '==', false))
+      .snapshotChanges()
+      .subscribe((todos) => {
+        this.leftItem.next(todos.length);
+      });
   }
 
   addTodo(title) {

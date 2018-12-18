@@ -1,5 +1,5 @@
 <div class="filters">
-  <div class="filters__letf-item">0 item left</div>
+  <div class="filters__letf-item">{{ leftItem }} {{ itemLeftText() }}</div>
   <button class="filters__all" (click)="filterTodos('all')">All</button>
   <button class="filters__active" (click)="filterTodos('active')">Active</button>
   <button class="filters__completed" (click)="filterTodos('completed')">Completed</button>

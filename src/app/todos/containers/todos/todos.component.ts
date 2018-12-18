@@ -9,6 +9,7 @@ import { TodoService } from '../../todo.service';
 })
 export class TodosComponent implements OnInit {
   todos: any = [];
+  leftItem: number;
 
   constructor(private todosService: TodoService) { }
 
@@ -16,6 +17,9 @@ export class TodosComponent implements OnInit {
     this.todosService.getTodos();
     this.todosService.todosChanged.subscribe((todos) => {
       this.todos = todos;
+    });
+    this.todosService.leftItem.subscribe(leftItem => {
+      this.leftItem = leftItem;
     });
   }
 
